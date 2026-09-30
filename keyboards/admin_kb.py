@@ -55,6 +55,9 @@ def edit_portfolio_field_kb(item_id: int) -> InlineKeyboardMarkup:
     builder.row(InlineKeyboardButton(text="🏷 Teglar", callback_data=f"editpf:{item_id}:tags"))
     builder.row(InlineKeyboardButton(text="🖼 Rasm", callback_data=f"editpf:{item_id}:photo"))
     return builder.as_markup()
+
+
+def order_admin_kb(order) -> InlineKeyboardMarkup:
     builder = InlineKeyboardBuilder()
     next_status = NEXT_STATUS.get(order.status)
     if next_status:
